@@ -32,13 +32,23 @@ This is a template Minimal Reproducible Example (MRE) for Firebase Functions. It
 
 ## Included Examples
 
-### HTTP Function
-- Endpoint: `helloWorld`
+### v1 HTTP Function
+- Endpoint: `helloWorld_v1`
 - Type: HTTP Request
 - Description: Returns a JSON response with a message and timestamp
 
-### Firestore Trigger
-- Function: `onDocumentCreated`
+### v1 Firestore Trigger
+- Function: `onDocumentCreated_v1`
+- Trigger: Document creation in 'collection'
+- Description: Logs new document creation events
+
+### v2 HTTP Function
+- Endpoint: `helloWorld_v2`
+- Type: HTTP Request
+- Description: Returns a JSON response with a message and timestamp
+
+### v2 Firestore Trigger
+- Function: `onDocumentCreated_v2`
 - Trigger: Document creation in 'collection'
 - Description: Logs new document creation events
 
@@ -57,9 +67,12 @@ This is a template Minimal Reproducible Example (MRE) for Firebase Functions. It
 ## Project Structure
 
 ```
-template/
-├── index.js          # Main functions file
-├── package.json      # Project dependencies
+js-template/
+├── functions/         # Firebase Functions directory
+│   ├── index.js      # Main functions file
+│   └── package.json  # Project dependencies
+├── .firebaserc       # Firebase project configuration
+├── firebase.json     # Firebase configuration
 └── README.md         # This file
 ```
 
@@ -68,9 +81,10 @@ template/
 1. **Authentication**: Ensure you're logged in with `firebase login`
 2. **Project Selection**: Verify correct project with `firebase use <project-id>`
 3. **Billing**: Confirm Blaze plan is enabled for Functions
+4. **Deploying Local Changes**: [This explains the steps to deploy local changes to the repository code to Firebase.](https://invertase.notion.site/Deploying-Local-Code-Changes-in-firebase-functions-firebase-functions-python-and-firebase-function-209d96ac9930801691e3c6b67a4d7cf7?pvs=74)
 
 ## Additional Resources
 
 - [Firebase Functions Documentation](https://firebase.google.com/docs/functions)
 - [Firebase Admin SDK Documentation](https://firebase.google.com/docs/admin/setup)
-- [Firebase CLI Documentation](https://firebase.google.com/docs/cli) 
+- [Firebase CLI Documentation](https://firebase.google.com/docs/cli)
