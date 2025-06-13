@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "storage-repro-2"
+  },
+  "targets": {},
+  "etags": {
+    "storage-repro-2": {
+      "extensionInstances": {
+        "firestore-vector-search": "e89abb0026e761ad8bf3ab9278abdd74643018597c5b9d32a2240645e8607464",
+        "firestore-vector-search-79xn": "fd17d8139b1587a56d3e2485e064747a678e086d442951d4422286879c4c04b9",
+        "firestore-vector-search-j1v3": "00cea46aa535975cef63373a88d7e032691a476967422d2f5b35011ffced38f8"
+      }
+    }
+  }
+}
