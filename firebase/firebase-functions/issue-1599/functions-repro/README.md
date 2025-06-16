@@ -1,12 +1,13 @@
-# Firebase Functions Template MRE
+# firebase/firebase-functions#1599 MRE
 
-This is a template Minimal Reproducible Example (MRE) for Firebase Functions. It demonstrates basic setup and common use cases.
+This is a Minimal Reproducible Example (MRE) for [firebase/firebase-functions#1599](https://github.com/firebase/firebase-functions/issues/1599)
 
 ## Prerequisites
 
-- Node.js (v16 or later)
-- Firebase CLI (`npm install -g firebase-tools`)
-- Firebase project with Blaze plan (required for Functions)
+- Node.js (22.6.0)
+- Firebase CLI (13.15.2) 
+- Firebase Functions (5.0.1)
+- Firebase Admin (12.3.1)
 
 ## Setup
 
@@ -35,28 +36,6 @@ This is a template Minimal Reproducible Example (MRE) for Firebase Functions. It
    firebase deploy --only functions
    ```
 
-## Included Examples
-
-### v1 HTTP Function
-- Endpoint: `helloWorld_v1`
-- Type: HTTP Request
-- Description: Returns a JSON response with a message and timestamp
-
-### v1 Firestore Trigger
-- Function: `onDocumentCreated_v1`
-- Trigger: Document creation in 'collection'
-- Description: Logs new document creation events
-
-### v2 HTTP Function
-- Endpoint: `helloWorld_v2`
-- Type: HTTP Request
-- Description: Returns a JSON response with a message and timestamp
-
-### v2 Firestore Trigger
-- Function: `onDocumentCreated_v2`
-- Trigger: Document creation in 'collection'
-- Description: Logs new document creation events
-
 ## Testing Locally
 
 1. Start the Firebase emulator:
@@ -72,7 +51,7 @@ This is a template Minimal Reproducible Example (MRE) for Firebase Functions. It
 ## Project Structure
 
 ```
-ts-template/
+functions-repro/
 ├── functions/         # Firebase Functions directory
 │   ├── index.ts      # Main functions file
 │   ├── package.json  # Project dependencies

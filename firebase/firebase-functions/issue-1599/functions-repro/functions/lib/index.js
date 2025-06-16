@@ -2,8 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.beforeCreated = void 0;
 const app_1 = require("firebase-admin/app");
-const identity_1 = require("firebase-functions/identity");
 const firestore_1 = require("firebase-admin/firestore");
+const identity_1 = require("firebase-functions/v2/identity");
+// import { onRequest } from "firebase-functions/https";
 // Initialize Firebase Admin
 (0, app_1.initializeApp)();
 exports.beforeCreated = (0, identity_1.beforeUserCreated)({
