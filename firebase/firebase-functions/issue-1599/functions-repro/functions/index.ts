@@ -10,10 +10,13 @@ export const beforeCreated = beforeUserCreated({
   region: 'us-west2',
 }, async (event: any) => {
   const firestore = getFirestore();
+  const now = new Date();
+  const timeWithMs = now.toTimeString().split(' ')[0] + '.' + now.getMilliseconds().toString().padStart(3, '0');
 
   const newUser = {
     email: event.data.email,
     uid: event.data.uid,
+    timestamp: timeWithMs
   };
 
   const userDocRef = firestore.collection('Issue1599Users').doc();
