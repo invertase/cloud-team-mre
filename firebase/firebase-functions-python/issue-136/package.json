@@ -1,0 +1,11 @@
+{
+  "name": "issue-136",
+  "scripts": {
+    "serve": "firebase emulators:start",
+    "deploy": "firebase deploy --only functions",
+    "version": "firebase --version"
+  },
+  "dependencies": {
+    "firebase-tools": "12.5.4"
+  }
+}
