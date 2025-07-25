@@ -27,10 +27,10 @@ export const triggerEvent = () => {
       user_agent: navigator.userAgent,
       page_url: window.location.href
     });
-    console.log('✅ app_remove event triggered successfully');
+    console.log('✅ analytics event triggered successfully');
     return true;
   } catch (error) {
-    console.error('❌ Error triggering app_remove event:', error);
+    console.error('❌ Error triggering analytics event:', error);
     return false;
   }
 };
