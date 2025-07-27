@@ -46,7 +46,7 @@ export const issue731CreateDocumentSchedule5 = onSchedule("every 5 minutes", asy
 });
 
 export const issue731OnDocumentUpdate1 = onDocumentUpdated(
-  collection1,
+  collection1 + "/{documentId}",
   async (event) => {
     const data = event.data.after.data();
     if (data.status?.state === "ERROR") {
@@ -59,7 +59,7 @@ export const issue731OnDocumentUpdate1 = onDocumentUpdated(
 );
 
 export const issue731OnDocumentUpdate2 = onDocumentUpdated(
-  collection2,
+  collection2 + "/{documentId}",
   async (event) => {
     const data = event.data.after.data();
     if (data.status?.state === "ERROR") {
