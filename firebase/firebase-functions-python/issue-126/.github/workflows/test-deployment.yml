@@ -1,0 +1,57 @@
+name: Firebase Python Deploy Repro
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    container:
+      image: python:3.11-slim
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install system deps
+        run: |
+          apt-get update
+          # Node.js + npm
+          apt-get install -y curl gnupg git
+          curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+          apt-get install -y nodejs
+          # Firebase CLI
+          npm install -g firebase-tools
+          # Install Python dependencies globally
+          pip3 install firebase-functions firebase-admin google-cloud-firestore
+
+          # Create the functions directory structure
+          mkdir -p functions
+          echo 'from firebase_functions import https_fn' > functions/main.py
+          echo 'import firebase_admin' >> functions/main.py
+          echo 'from firebase_admin import firestore' >> functions/main.py
+          echo '' >> functions/main.py
+          echo 'app = firebase_admin.initialize_app()' >> functions/main.py
+          echo 'db = firestore.client()' >> functions/main.py
+          echo '' >> functions/main.py
+          echo '@https_fn.on_request()' >> functions/main.py
+          echo 'def hello_world(req: https_fn.Request) -> https_fn.Response:' >> functions/main.py
+          echo '    db.collection("test").add({"msg": "hello"})' >> functions/main.py
+          echo '    return https_fn.Response("Added a document")' >> functions/main.py
+
+          # Create requirements.txt for runtime detection
+          echo 'firebase-functions' > functions/requirements.txt
+          echo 'firebase-admin' >> functions/requirements.txt
+          echo 'google-cloud-firestore' >> functions/requirements.txt
+
+      # Authenticate to GCP with service account
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.SERVICE_ACCOUNT }}
+
+      - name: Deploy functions (this should trigger the bug)
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
+        run: |
+          firebase deploy --only functions --project=${{ secrets.FIREBASE_PROJECT_ID }} --debug
