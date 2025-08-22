@@ -29,7 +29,12 @@ Firebase CLI's code discovery process executes module-level code during deployme
    FIREBASE_PROJECT_ID=your-project-id
    ```
 
-3. **Run the reproduction**:
+3. **Run the reproduction** (this will fail with the authentication error):
    ```bash
-   act workflow_dispatch -P ubuntu-22.04=python:3.11-slim --container-architecture linux/amd64 --secret-file .secrets
+   act workflow_dispatch -W .github/workflows/test-deployment.yml -P ubuntu-22.04=python:3.11-slim --container-architecture linux/amd64 --secret-file .secrets
+   ```
+
+4. **Test with patched CLI** (requires `firebase-tools-14.11.2.tgz` in repo root):
+   ```bash
+   act workflow_dispatch -W .github/workflows/test-deployment-with-patch.yml -P ubuntu-22.04=python:3.11-slim --container-architecture linux/amd64 --secret-file .secrets
    ```
