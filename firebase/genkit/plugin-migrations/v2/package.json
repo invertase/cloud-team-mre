@@ -1,0 +1,13 @@
+{
+  "name": "genkit-plugin-migrations",
+  "version": "1.0.0",
+  "description": "A simple project for Genkit plugin migrations.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "genkit start -- node index.js"
+  },
+  "dependencies": {
+    "@genkit-ai/google-genai": "file:../../../../../genkit 4/genkit/js/plugins/google-genai"
+  }
+}
