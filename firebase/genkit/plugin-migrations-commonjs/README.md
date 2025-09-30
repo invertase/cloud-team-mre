@@ -99,6 +99,4 @@ This approach avoids port conflicts and makes it easier to do direct comparisons
 
 ## Frequent Issues
 
-- "Cannot find module" errors. If you encounter this, you may want to try using commonjs. There is a commonjs version of this template in `../plugin-migrations-commonjs`.
-
 - The setup script isn't perfect, so will often generate code that doesn't work. You should manually resolve the issues, which typically involve resolving the correct imports.
