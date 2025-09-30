@@ -35,7 +35,7 @@ function runCommand(command, cwd = process.cwd()) {
 
 function generateIndexFile(pluginName, isV2 = false, additionalConfig = {}) {
   const { modelName, apiKey, customImports } = additionalConfig;
-  const fullPluginName = `@genkit-ai/${pluginName}`;
+  const fullPluginName = `${pluginName}`;
   const importName = pluginName.replace(/-/g, '');
 
   let content = `import { genkit } from 'genkit';
@@ -103,8 +103,7 @@ async function main() {
       {
         type: 'input',
         name: 'pluginName',
-        message: 'What is the plugin name you want to migrate? (e.g., google-genai)',
-        default: 'google-genai',
+        message: 'What is the plugin name you want to migrate? (e.g., @genkit-ai/google-genai)',
         validate: (input) => {
           if (!input || input.trim().length === 0) {
             return 'Please enter a plugin name.';
@@ -167,7 +166,7 @@ async function main() {
       }
     ]);
 
-    const fullPluginName = `@genkit-ai/${answers.pluginName}`;
+    const fullPluginName = `${answers.pluginName}`;
 
     log(`\n${COLORS.yellow}📋 Setup Summary:${COLORS.reset}`);
     log(`   Plugin (v1): ${fullPluginName}`);
