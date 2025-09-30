@@ -9,21 +9,18 @@
     "shell": "npm run build && npx firebase functions:shell",
     "start": "npm run shell",
     "deploy": "npx firebase deploy --only functions",
-    "logs": "npx firebase functions:log",
-    "test": "vitest"
+    "logs": "npx firebase functions:log"
   },
   "engines": {
     "node": "20"
   },
   "main": "lib/index.js",
   "dependencies": {
-    "firebase-admin": "^13.4.0",
-    "firebase-functions": "^6.3.2",
-    "firebase-tools": "^14.6.0"
+    "firebase-admin": "13.4.0",
+    "firebase-functions": "6.4.0",
+    "firebase-tools": "14.17.0"
   },
   "devDependencies": {
-    "vitest": "^3.2.2",
-    "firebase-functions-test": "^3.4.1",
     "typescript": "^5.7.3"
   },
   "private": true
