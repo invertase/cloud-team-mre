@@ -3,6 +3,13 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
+    "serve:functions": "npm run build && npx firebase emulators:start --only functions",
+    "serve:common": "npm run build && npx firebase emulators:start --only functions,firestore,auth,storage",
+    "serve:all": "npm run build && npx firebase emulators:start",
+    "shell": "npm run build && npx firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "npx firebase deploy --only functions",
+    "logs": "npx firebase functions:log",
     "test": "vitest"
   },
   "engines": {

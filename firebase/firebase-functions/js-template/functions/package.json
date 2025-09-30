@@ -5,13 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "serve:functions": "npm run build && firebase emulators:start --only functions",
-    "serve:common": "npm run build && firebase emulators:start --only functions,firestore,auth,storage",
-    "serve:all": "npm run build && firebase emulators:start",
-    "shell": "firebase functions:shell",
+    "serve:functions": "npx firebase emulators:start --only functions",
+    "serve:common": "npx firebase emulators:start --only functions,firestore,auth,storage",
+    "serve:all": "npx firebase emulators:start",
+    "shell": "npx firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "deploy": "npx firebase deploy --only functions",
+    "logs": "npx firebase functions:log"
   },
   "keywords": [],
   "author": "",
