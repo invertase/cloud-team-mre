@@ -20,7 +20,7 @@ function log(message, color = COLORS.reset) {
 function runCommand(command, cwd = process.cwd()) {
   try {
     log(`\n${COLORS.blue}Running: ${command}${COLORS.reset}`);
-    const result = execSync(command, {
+    execSync(command, {
       cwd,
       stdio: 'inherit',
       shell: true
@@ -33,13 +33,23 @@ function runCommand(command, cwd = process.cwd()) {
   }
 }
 
+/**
+ * Generates a CommonJS index.js file for the plugin.
+ * @param {string} pluginName
+ * @param {boolean} isV2
+ * @param {object} additionalConfig
+ * @returns {string}
+ */
 function generateIndexFile(pluginName, isV2 = false, additionalConfig = {}) {
   const { modelName, apiKey, customImports } = additionalConfig;
   const fullPluginName = `${pluginName}`;
   const importName = pluginName.replace(/-/g, '');
 
-  let content = `import { genkit } from 'genkit';
-import { ${importName} } from '${fullPluginName}';
+  // CommonJS syntax
+  let content = `'use strict';
+
+const { genkit } = require('genkit');
+const { ${importName} } = require('${fullPluginName}');
 
 const ai = genkit({
   plugins: [
@@ -88,7 +98,7 @@ ai.defineFlow({
   };
 });
 
-export default ai;
+module.exports = ai;
 `;
 
   return content;
