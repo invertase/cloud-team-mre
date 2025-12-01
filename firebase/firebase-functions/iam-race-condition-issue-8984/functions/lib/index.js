@@ -1,5 +1,7 @@
-import { onRequest } from "firebase-functions/v2/https";
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.helloFailingInitialDeploy = void 0;
+const https_1 = require("firebase-functions/v2/https");
 /**
  * FIXED VERSION - Inline the value instead of importing from *.local
  *
@@ -10,7 +12,7 @@ import { onRequest } from "firebase-functions/v2/https";
  * because firebase-tools treats it as an "update" (not a "create").
  */
 const value = "some value";
-
-export const helloFailingInitialDeploy = onRequest((request, response) => {
-  response.send(`Hello from Firebase! The value is: ${value}`);
+exports.helloFailingInitialDeploy = (0, https_1.onRequest)((request, response) => {
+    response.send(`Hello from Firebase! The value is: ${value}`);
 });
+//# sourceMappingURL=index.js.map

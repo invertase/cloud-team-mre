@@ -40,7 +40,7 @@ echo ""
 
 # Step 1: Check if the Cloud Run service exists
 echo -e "${COLORS_YELLOW}Step 1: Checking if Cloud Run service exists...${COLORS_NC}"
-SERVICE_EXISTS=$(gcloud run services list --project="$PROJECT_ID" --region="$REGION" --format="value(name)" --filter="name=$SERVICE_NAME" 2>/dev/null || echo "")
+SERVICE_EXISTS=$(gcloud run services list --project="$PROJECT_ID" --region="$REGION" --format="value(name)" --filter="metadata.name=$SERVICE_NAME" 2>/dev/null || echo "")
 
 if [ -z "$SERVICE_EXISTS" ]; then
   echo -e "  ${COLORS_RED}Service not found: $SERVICE_NAME${COLORS_NC}"

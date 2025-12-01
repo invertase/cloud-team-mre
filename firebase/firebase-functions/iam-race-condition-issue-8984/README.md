@@ -59,6 +59,50 @@ Second Deploy (succeeds)
 > **[REQUIRED] Actual behavior**
 > Even after successful consequent deployments, the Cloud Run console shows that invocations of the functions "Require authentication". Navigating to the function endpoint returns a "403 Forbidden" error.
 
+## MRE Reproduction Results
+
+This MRE was tested and successfully confirmed the bug:
+
+**Step 1: First deploy (buggy code) - FAILS as expected:**
+```
+i  functions: creating Node.js 22 (2nd Gen) function helloFailingInitialDeploy(us-central1)...
+Could not create or update Cloud Run service hellofailinginitialdeploy, Container Healthcheck failed.
+Revision 'hellofailinginitialdeploy-00001-xxx' is not ready and cannot serve traffic.
+
+Error: There was an error deploying functions
+```
+
+Note: Output says **"creating"** - the Cloud Run service now exists but is broken.
+
+**Step 2: Second deploy (fixed code) - "SUCCEEDS":**
+```
+i  functions: updating Node.js 22 (2nd Gen) function helloFailingInitialDeploy(us-central1)...
+✔  functions[helloFailingInitialDeploy(us-central1)] Successful update operation.
+Function URL (helloFailingInitialDeploy(us-central1)): https://hellofailinginitialdeploy-XXXXXXXXXX-uc.a.run.app
+
+✔  Deploy complete!
+```
+
+Note: Output says **"updating"** (not "creating") - IAM policies are skipped!
+
+**Step 3: Curl the function URL - 403 FORBIDDEN:**
+```
+$ curl https://hellofailinginitialdeploy-XXXXXXXXXX-uc.a.run.app
+
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>403 Forbidden</title>
+</head>
+<body text=#000000 bgcolor=#ffffff>
+<h1>Error: Forbidden</h1>
+<h2>Your client does not have permission to get URL <code>/</code> from this server.</h2>
+</body></html>
+```
+
+**Bug confirmed**: Deployment "succeeded" but function returns 403 because IAM policies were never applied.
+
+---
+
 ## Prerequisites
 
 - Node.js v22 or later
