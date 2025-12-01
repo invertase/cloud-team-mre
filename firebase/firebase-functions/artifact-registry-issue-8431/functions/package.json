@@ -1,0 +1,27 @@
+{
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve:functions": "npm run build && npx firebase emulators:start --only functions",
+    "serve:all": "npm run build && npx firebase emulators:start",
+    "shell": "npm run build && npx firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "npx firebase deploy --only functions",
+    "deploy:getLatestID": "npx firebase deploy --only functions:getLatestID",
+    "logs": "npx firebase functions:log"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^13.4.0",
+    "firebase-functions": "^6.3.2"
+  },
+  "devDependencies": {
+    "firebase-tools": "^14.6.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
