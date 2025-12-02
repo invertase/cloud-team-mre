@@ -1,0 +1,53 @@
+card_image: https://raw.githubusercontent.com/memextech/nextjs-firebase-template/main/public/images/card-image-viewport.png
+created_at: 2025-03-20 16:10:32.234000
+creator_id: your name
+deployment:
+  last_deployed: 2025-03-24
+  type: firebase
+  url: https://fullstacktemplate-a3e1c.web.app
+description: A template for setting up Firebase with Next.js for authentication, Firestore,
+  and hosting
+domain: Web Development
+features:
+- Firebase Authentication
+- Firestore Database
+- Next.js Frontend
+- Firebase Hosting
+getting_started_screen: false
+getting_started_screen_index: 0
+git:
+  branch: main
+  remote: origin
+  url: https://github.com/memextech/nextjs-firebase-template
+hero_image: https://raw.githubusercontent.com/memextech/nextjs-firebase-template/main/public/images/hero-image.png
+icon: Rocket
+is_published: true
+pills:
+- icon: Rocket
+  label: Setup Firebase
+  prompt: Help me set up Firebase with Next.js
+project_id: WYR0vVZ1D0zJKh9kxJc3
+published_at: 2025-03-20 16:17:03.776000
+requirements:
+- description: Firebase account and project
+  type: system
+- description: Node.js and npm
+  type: software
+slug: firebase-nextjs-setup
+storage:
+  compression_enabled: true
+  gcs_path: null
+  last_sync: null
+  max_file_size_mb: 100
+  size_bytes: null
+title: Firebase Next.js Setup
+tools:
+- name: Firebase
+  role: Backend and Authentication
+  type: platform
+  version: latest
+- name: Next.js
+  role: Frontend Framework
+  type: library
+  version: latest
+updated_at: 2025-03-20 16:17:03.776000

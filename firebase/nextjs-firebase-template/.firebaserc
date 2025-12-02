@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "extensions-2560"
+  },
+  "targets": {
+    "your-project-id": {
+      "hosting": {
+        "your-site-name": [
+          "Saas Template"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
