@@ -37,7 +37,7 @@ export default function LandingPage() {
               <span className="text-xl font-bold text-indigo-600">SaaS Template</span>
             </div>
             <div className="flex space-x-4">
-              <a href="#features" className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+              <a href="#features" className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Services</a>
               <a href="#pricing" className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
               {user ? (
                 <button
@@ -65,10 +65,10 @@ export default function LandingPage() {
           <div className="text-center">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
               <span className="block">Your Amazing</span>
-              <span className="block text-indigo-600">SaaS Product</span>
+              <span className="block text-indigo-600">SaaS Product on Firebase</span>
             </h1>
             <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              Replace this with your compelling value proposition. Explain how your product solves customer problems.
+              We offer a wide range of services to help you get started with your Next.js application on Firebase.
             </p>
             <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md shadow">
@@ -93,7 +93,7 @@ export default function LandingPage() {
               Everything you need
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-              Replace with your product's key features and benefits.
+              We offer a wide range of services to help you get started with your Next.js application on Firebase.
             </p>
           </div>
 
@@ -110,9 +110,9 @@ export default function LandingPage() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Feature One</h3>
+                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Firebase App Hosting</h3>
                     <p className="mt-5 text-base text-gray-500">
-                      Describe how this feature benefits your users. Focus on the value it provides.
+                      Firebase App Hosting is a feature that allows you to host your Next.js application on Firebase.
                     </p>
                   </div>
                 </div>
@@ -129,9 +129,9 @@ export default function LandingPage() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Feature Two</h3>
-                    <p className="mt-5 text-base text-gray-500">
-                      Explain another key feature of your product and why it matters to your customers.
+                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Firebase Authentication</h3>
+                    <p>
+                      Firebase Authentication is a feature that allows you to authenticate users with Firebase.
                     </p>
                   </div>
                 </div>
@@ -148,9 +148,9 @@ export default function LandingPage() {
                         </svg>
                       </span>
                     </div>
-                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Feature Three</h3>
+                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Cloud Functions for Firebase</h3>
                     <p className="mt-5 text-base text-gray-500">
-                      Highlight a third important feature that sets your product apart from competitors.
+                      Cloud Functions for Firebase is a feature that allows you to run server-side code on Firebase.
                     </p>
                   </div>
                 </div>
