@@ -1,42 +1,17 @@
-# Cloud Platform Team MRE Repository
+# Firebase CLI Issue #8775 - Functions with Secrets MRE
 
-This repository contains Minimal Reproducible Examples (MREs) for the Cloud Platform Team at Invertase. Each MRE is designed to help reproduce and debug specific issues or demonstrate particular functionality.
+This is a Minimal Reproducible Example (MRE) for [Firebase CLI issue #8775](https://github.com/firebase/firebase-tools/issues/8775).
 
-## Repository Structure
+## Issue Description
 
-Each MRE should be organized in its own branch, following this directory structure:
+Firebase CLI fails to deploy 2nd gen Cloud Functions with secrets, misreporting the issue as an IAM problem. The CLI should auto-create secrets from `.env` files in Secret Manager and grant the necessary IAM roles, but instead it shows incomplete gcloud commands and fails with IAM errors.
 
-```
-<organization>/<repository>/<mre-directory>
-```
+## Prerequisites
 
-For example:
-```
-firebase/firebase-functions/issue-123
-```
-
-## Guidelines
-
-1. **Branch Naming**: Create a new branch for each MRE
-2. **Directory Structure**: Follow the organization/repository pattern
-3. **Documentation**: Each MRE should include its own `README.md` with:
-   - Setup instructions
-   - Prerequisites
-   - Steps to reproduce
-   - Expected behavior
-   - Actual behavior (if applicable)
-
-## Creating a New MRE
-
-1. Create a new branch from `main`
-2. Create the appropriate directory structure
-3. Add your MRE code and documentation
-
-## Best Practices
-
-- Keep MREs minimal and focused on the specific issue
-- Include all necessary configuration files
-- Document any environment variables or secrets needed
-- Provide clear steps to reproduce the issue
-- Include expected vs actual behavior
-
+- Node.js (v20 or later)
+- Firebase CLI version 14.8.0 (will be installed locally via npm, or install globally: `npm install -g firebase-tools@14.8.0`)
+- Firebase project with Blaze plan (required for Functions)
+- Required APIs enabled:
+  - `cloudfunctions.googleapis.com`
+  - `cloudbuild.googleapis.com`
+  - `secretmanager.googleapis.com`
