@@ -1,0 +1,19 @@
+{
+  "name": "firebase-functions-issue-9563",
+  "version": "1.0.0",
+  "description": "MRE for Firebase Functions Gen2 Artifact Registry Permission Issue #9563",
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo 'Linting skipped for MRE'",
+    "deploy": "firebase deploy --only functions",
+    "deploy:gcloud": "gcloud functions deploy getAmbassadorApplications --gen2 --runtime=nodejs20 --region=us-central1 --source=. --entry-point=getAmbassadorApplications --trigger-http --allow-unauthenticated"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.4.0",
+    "firebase-functions": "^7.0.0"
+  },
+  "engines": {
+    "node": "20"
+  }
+}
+
