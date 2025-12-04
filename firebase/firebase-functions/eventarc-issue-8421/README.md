@@ -1,4 +1,4 @@
-# Firebase Issue #8421 - Eventarc Custom Audience Misconfiguration
+# Firebase Tools #8447 - Eventarc Custom Audience Misconfiguration
 
 This MRE demonstrates that Firebase v2 Cloud Functions using `onCustomEventPublished` (Eventarc triggers) fail to receive events after deployment because:
 
