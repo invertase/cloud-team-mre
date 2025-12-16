@@ -1,15 +1,13 @@
 import { onRequest } from "firebase-functions/v2/https";
 
 /**
- * FIXED VERSION - Inline the value instead of importing from *.local
+ * BUGGY VERSION - Imports from *.local directory which is excluded from deployment.
+ * This causes the first deployment to fail the health check.
  *
- * Copy this file over index.ts for the second deployment:
+ * After this fails, switch to the fixed version:
  *   cp functions/src/index.ts.fixed functions/src/index.ts
- *
- * This deployment will succeed, BUT the IAM policies won't be applied
- * because firebase-tools treats it as an "update" (not a "create").
  */
-const value = "some value";
+import { value } from "./feature.local/somethingModule";
 
 export const helloFailingInitialDeploy = onRequest((request, response) => {
   response.send(`Hello from Firebase! The value is: ${value}`);
