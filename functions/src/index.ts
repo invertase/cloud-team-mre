@@ -4,6 +4,6 @@ import { onRequest } from "firebase-functions/https";
 // import { value } from "./feature.local/somethingModule";
 const value = "some value";
 
-export const helloFailingInitialDeploy = onRequest((request, response) => {
+export const helloFailingInitialDeployV15 = onRequest((request, response) => {
   response.send(`Hello from Firebase! The value is: ${value}`);
 });
