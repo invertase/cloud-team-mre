@@ -1,7 +1,6 @@
 const DEFAULT_FUNCTIONS_REGION = "europe-west3";
 
-import "firebase-functions/lib/logger/compat";
-import * as _functions from "firebase-functions";
+import * as _functions from "firebase-functions/v1";
 
 // Shared RUNTIME_OPTS object - will be mutated when .region() is called
 export const RUNTIME_OPTS = {
