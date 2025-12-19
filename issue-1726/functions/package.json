@@ -1,0 +1,15 @@
+{
+  "name": "functions",
+  "main": "lib/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-admin": "latest",
+    "firebase-functions": "latest"
+  },
+  "devDependencies": {
+    "typescript": "latest"
+  }
+}
+
