@@ -40,7 +40,7 @@ js-template/
 1. **Authentication**: Ensure you're logged in with `firebase login`
 2. **Project Selection**: Verify correct project with `firebase use <project-id>`
 3. **Billing**: Confirm Blaze plan is enabled for Functions
-4. **Deploying Local Changes**: [This explains the steps to deploy local changes to the repository code to Firebase.](https://invertase.notion.site/Deploying-Local-Code-Changes-in-firebase-functions-firebase-functions-python-and-firebase-function-209d96ac9930801691e3c6b67a4d7cf7?pvs=74)
+4. **Deploying Local Changes**: [This explains the steps to deploy local changes to the repository code to Firebase.](../../DEPLOY_LOCAL_CHANGES.md)
 
 ## Additional Resources
 

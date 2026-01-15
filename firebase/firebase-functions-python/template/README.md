@@ -80,7 +80,7 @@ template/
 3. **Billing**: Confirm Blaze plan is enabled for Functions
 4. **Python Version**: Make sure you're using Python 3.9 or later
 5. **Virtual Environment**: Always activate your virtual environment before installing dependencies
-6. **Deploying Local Changes**: [This explains the steps to deploy local changes to the repository code to Firebase.](https://invertase.notion.site/Deploying-Local-Code-Changes-in-firebase-functions-firebase-functions-python-and-firebase-function-209d96ac9930801691e3c6b67a4d7cf7?pvs=74)
+6. **Deploying Local Changes**: [This explains the steps to deploy local changes to the repository code to Firebase.](../../DEPLOY_LOCAL_CHANGES.md)
 
 ## Additional Resources
 
