@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -14,16 +18,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const testEmail = "user@example.com";
+const testEmail = "user3@example.com";
 const testPassword = "testPassword";
 
 export default function App() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [loadingAction, setLoadingAction] = useState(null);
 
   async function handleRegister() {
     setResult(null);
     setLoading(true);
+    setLoadingAction("register");
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -47,6 +53,38 @@ export default function App() {
       });
     } finally {
       setLoading(false);
+      setLoadingAction(null);
+    }
+  }
+
+  async function handleSignIn() {
+    setResult(null);
+    setLoading(true);
+    setLoadingAction("signin");
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        testEmail,
+        testPassword
+      );
+      setResult({
+        success: true,
+        message: `Signed in as ${userCredential.user.email} (${userCredential.user.uid})`,
+      });
+    } catch (err) {
+      const code = err.code || "";
+      const isOperationNotAllowed = code === "auth/operation-not-allowed";
+      setResult({
+        success: false,
+        message: err.code || err.message,
+        full: String(err),
+        hint: isOperationNotAllowed
+          ? "Enable Email/Password sign-in: Firebase Console → your project → Authentication → Sign-in method → Email/Password → Enable."
+          : null,
+      });
+    } finally {
+      setLoading(false);
+      setLoadingAction(null);
     }
   }
 
@@ -59,17 +97,30 @@ export default function App() {
         <code>auth/email-already-in-use</code>. Check Functions logs for
         blocking function invocations on the second run.
       </p>
-      <button
-        onClick={handleRegister}
-        disabled={loading}
-        style={{
-          padding: "0.75rem 1.5rem",
-          fontSize: "1rem",
-          cursor: loading ? "not-allowed" : "pointer",
-        }}
-      >
-        {loading ? "Registering…" : "Register user"}
-      </button>
+      <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap" }}>
+        <button
+          onClick={handleRegister}
+          disabled={loading}
+          style={{
+            padding: "0.75rem 1.5rem",
+            fontSize: "1rem",
+            cursor: loading ? "not-allowed" : "pointer",
+          }}
+        >
+          {loading && loadingAction === "register" ? "Registering…" : "Register user"}
+        </button>
+        <button
+          onClick={handleSignIn}
+          disabled={loading}
+          style={{
+            padding: "0.75rem 1.5rem",
+            fontSize: "1rem",
+            cursor: loading ? "not-allowed" : "pointer",
+          }}
+        >
+          {loading && loadingAction === "signin" ? "Signing in…" : "Sign in"}
+        </button>
+      </div>
       {result && (
         <div
           style={{
