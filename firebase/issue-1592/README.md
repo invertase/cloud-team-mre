@@ -6,21 +6,23 @@ Minimum reproducible example for [firebase/firebase-functions#1592](https://gith
 
 ---
 
-## Environment (strictly from issue)
+## Environment
 
 | Component          | Version   |
 | ------------------ | --------- |
-| node               | v18.20.3  |
+| node               | 20 (LTS)  |
 | firebase-functions | 5.0.1     |
 | firebase-tools     | 13.11.2   |
 | firebase-admin     | 12.2.0    |
+
+The issue originally specified Node v18.20.3; Node 18 was decommissioned for Cloud Functions (2025-10-31), so this MRE uses Node 20 for deployment.
 
 ---
 
 ## Prerequisites
 
-1. **Node 18.20.3**
-   - Using nvm: `nvm install 18.20.3 && nvm use` (or ensure `.nvmrc` is used: `nvm use` in this directory).
+1. **Node 20**
+   - Using nvm: `nvm install 20 && nvm use` (or ensure `.nvmrc` is used: `nvm use` in this directory).
 2. **Firebase CLI 13.11.2**
    - `npm install -g firebase-tools@13.11.2`
 
@@ -129,7 +131,7 @@ Example Microsoft payload (redact PII as needed):
 
 Before reporting, confirm:
 
-- [ ] node: v18.20.3 (`node -v`)
+- [ ] node: 20 (`node -v`)
 - [ ] firebase-functions: 5.0.1 (in `functions/package.json`)
 - [ ] firebase-tools: 13.11.2 (`firebase --version` or devDependency in `functions/`)
 - [ ] firebase-admin: 12.2.0 (in `functions/package.json`)
