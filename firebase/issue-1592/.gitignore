@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+*.local
+
+# Build / runtime
+client/dist
+functions/lib
+
+# Firebase
+firebase-debug.log
+firebase-debug.*.log
+.firebase/
