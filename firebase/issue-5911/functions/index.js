@@ -1,9 +1,9 @@
-const functions = require("firebase-functions");
+const { onRequest } = require("firebase-functions/v1/https");
 const { initializeApp } = require("firebase-admin/app");
 
 initializeApp();
 
-exports.bigben = functions.https.onRequest((req, res) => {
+exports.bigben = onRequest((req, res) => {
   res.json({
     message: "Big Ben",
     time: new Date().toISOString(),
