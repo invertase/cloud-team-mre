@@ -22,13 +22,12 @@ Deploying Cloud Functions fails when the project uses pnpm and a `pnpm-lock.yaml
 
 1. **Create a new project** in the [Firebase console](https://console.firebase.google.com/) and enable Cloud Functions.
 
-2. **Use this MRE**: Clone or copy this directory. Ensure `functions/` contains `package.json` and `pnpm-lock.yaml` (the lockfile is committed; it is required to trigger the bug).
+2. **Use this MRE**: Clone or copy this directory (the repo root is `issue-5911/`).
 
-3. **Install dependencies in `functions/`** (if you need to regenerate the lockfile):
+3. **Install dependencies from repo root** (installs the workspace and creates the single root lockfile):
    ```bash
-   cd functions
+   cd issue-5911
    pnpm install
-   cd ..
    ```
 
 4. **Configure the Firebase project**: Edit `.firebaserc` and set `"default"` to your project ID, or run:
@@ -36,10 +35,12 @@ Deploying Cloud Functions fails when the project uses pnpm and a `pnpm-lock.yaml
    firebase use <your-project-id>
    ```
 
-5. **Deploy the function**:
+5. **Deploy the function** (from repo root). The predeploy hook runs `pnpm --dir functions install --ignore-workspace` to generate a standalone `functions/pnpm-lock.yaml` that matches `functions/package.json`, so the buildpack gets a matching lockfile:
    ```bash
    firebase deploy --only functions:bigben
    ```
+   Or: `pnpm run deploy`
+
    For parity with the original report (firebase-tools 12.2.1):
    ```bash
    npx firebase-tools@12.2.1 deploy --only functions:bigben
@@ -69,11 +70,14 @@ Functions deploy had errors with the following functions:
 issue-5911/
 ├── .firebaserc
 ├── firebase.json
+├── package.json           # root package (private)
+├── pnpm-workspace.yaml    # workspace: packages: ['functions']
+├── pnpm-lock.yaml         # single lockfile (from pnpm install at root)
 ├── README.md
 └── functions/
     ├── index.js
-    ├── package.json
-    └── pnpm-lock.yaml
+    ├── package.json       # workspace package
+    └── pnpm-lock.yaml     # generated at predeploy (standalone, matches package.json; 
 ```
 
 The single exported function is **bigben** (HTTP), as referenced in the original issue.

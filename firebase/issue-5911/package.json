@@ -1,0 +1,7 @@
+{
+  "name": "issue-5911-root",
+  "private": true,
+  "scripts": {
+    "deploy": "firebase deploy --only functions"
+  }
+}

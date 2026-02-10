@@ -1,0 +1,2 @@
+# Predeploy copies root pnpm-lock.yaml here; keep single lockfile at root
+functions/pnpm-lock.yaml

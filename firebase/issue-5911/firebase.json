@@ -4,6 +4,7 @@
       "runtime": "nodejs20",
       "source": "functions",
       "codebase": "default",
+      "predeploy": ["pnpm --dir functions install --ignore-workspace"],
       "ignore": [
         "node_modules",
         ".git",
