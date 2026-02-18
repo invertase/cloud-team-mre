@@ -2,7 +2,7 @@
 
 **Issue:** [Firebase Emulator simply does not initialize .env || .env.local || .env.default](https://github.com/firebase/firebase-tools/issues/6499)
 
-Minimum reproducible example using the exact environment and versions reported by the issue author.
+Minimum reproducible example using the exact environment and versions reported by the issue author. The HTTP function is **TypeScript** and uses **Firebase Functions v2** (`firebase-functions/v2/https`).
 
 This MRE lives at `cloud-team-mre/firebase-tools/issue-6499/` in the repo.
 
@@ -24,25 +24,26 @@ This MRE lives at `cloud-team-mre/firebase-tools/issue-6499/` in the repo.
    cd cloud-team-mre/firebase-tools/issue-6499
    nvm use
    # or: nvm install 14.17.6 && nvm use 14.17.6
-   node -v   # should show v14.17.6
+   node -v   
    ```
 
 2. **Install Firebase CLI 10.6.0**
    ```bash
    npm install -g firebase-tools@10.6.0
-   firebase --version   # should show 10.6.0
+   firebase --version    
    ```
    Or use without global install: `npx firebase-tools@10.6.0` in the commands below.
 
-3. **Install function dependencies**
+3. **Install function dependencies and build**
    ```bash
-   cd functions && npm install && cd ..
+   cd functions && npm install && npm run build && cd ..
    ```
 
 4. **Start the Functions emulator**
    ```bash
    firebase emulators:start --only functions
    ```
+   (The emulator runs the compiled output in `functions/lib/`. Re-run `npm run build` in `functions/` after changing TypeScript source.)
    (If using npx: `npx firebase-tools@10.6.0 emulators:start --only functions`)
 
 5. **Trigger the HTTP function**
@@ -56,6 +57,7 @@ This MRE lives at `cloud-team-mre/firebase-tools/issue-6499/` in the repo.
    - Look for lines like:
      - `[MRE 6499] At module load, custom env vars: ...`
      - `[MRE 6499] Inside request handler, custom env vars: ...`
+
 
 ## Expected behavior
 
@@ -82,10 +84,13 @@ cloud-team-mre/firebase-tools/issue-6499/
 ├── firebase.json
 ├── .firebaserc
 └── functions/
-    ├── package.json      # firebase-functions@3.20.1, firebase-admin@10.1.0
+    ├── package.json      # firebase-functions, firebase-admin; main → lib/index.js
+    ├── tsconfig.json     # TypeScript → lib/
+    ├── src/
+    │   └── index.ts      # v2 HTTP function (TypeScript) that logs process.env
     ├── .env              # PLANET=Earth, AUDIENCE=Humans, MY_CUSTOM_VAR=from_dotenv
     ├── .env.local        # AUDIENCE=LocalHumans, MY_CUSTOM_VAR=from_dotenv_local
-    └── index.js          # HTTP function that logs process.env
+    └── lib/              # compiled output (gitignored); run npm run build
 ```
 
 ## Optional: run against current firebase-tools

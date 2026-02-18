@@ -2,12 +2,20 @@
   "name": "functions",
   "description": "MRE for firebase-tools issue #6499 - .env not loaded by emulator",
   "engines": {
-    "node": "18"
+    "node": "20"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
   "dependencies": {
     "firebase-admin": "^12.5.0",
     "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   },
   "private": true
 }
