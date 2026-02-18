@@ -1,14 +1,5 @@
-/**
- * MRE for firebase-tools issue #6499
- * https://github.com/firebase/firebase-tools/issues/6499
- *
- * Logs process.env at module load and inside the request handler
- * to verify whether .env / .env.local are loaded by the emulator.
- */
-
 const functions = require("firebase-functions");
 
-// Keys we expect from .env and .env.local (non-reserved)
 const EXPECTED_KEYS = ["PLANET", "AUDIENCE", "MY_CUSTOM_VAR"];
 
 function pickEnvForLog(env) {
@@ -23,7 +14,6 @@ function pickEnvForLog(env) {
   return out;
 }
 
-// Log at module load (top-level). Per issue comments, .env may only be available inside the handler.
 console.log("[MRE 6499] At module load, custom env vars:", JSON.stringify(pickEnvForLog(process.env)));
 
 exports.logEnv = functions.https.onRequest((req, res) => {
