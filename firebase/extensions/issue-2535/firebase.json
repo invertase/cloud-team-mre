@@ -1,0 +1,6 @@
+{
+  "extensions": {
+    "firestore-bigquery-export-callinsights": "firebase/firestore-bigquery-export@0.2.6"
+  }
+}
+

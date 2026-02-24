@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "dev-extensions-testing"
+  },
+  "targets": {},
+  "etags": {
+    "storage-repro-2": {
+      "extensionInstances": {
+        "firestore-bigquery-export-callinsights": "25cf655c6b846dc89c133a4876c3068b0a5cf2a521990a4c2cf1186cf31d2ac3",
+        "test123": "a6b8b84a255f66dee29d71e8a3af9002247df442b4549027bdc27cdae50c23da"
+      }
+    }
+  }
+}
