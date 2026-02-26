@@ -1,0 +1,28 @@
+{
+  "name": "issue-1805-functions",
+  "version": "0.0.1",
+  "description": "MRE for firebase-functions#1805 — Node 24 + GCF Gen1 Auth trigger",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve:functions": "npm run build && npx firebase emulators:start --only functions",
+    "serve:common": "npm run build && npx firebase emulators:start --only functions,auth",
+    "shell": "npm run build && npx firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "npx firebase deploy --only functions",
+    "logs": "npx firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "13.6.0",
+    "firebase-functions": "7.0.3"
+  },
+  "devDependencies": {
+    "firebase-tools": "15.2.1",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
