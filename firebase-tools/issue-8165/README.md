@@ -16,7 +16,7 @@ The `serveAdmin` path in firebase-tools (used for function discovery during depl
 | **Yarn**               | 4.x (Berry) with PnP |
 | **firebase-functions** | ^5.0.0    |
 | **firebase-admin**     | ^12.0.0   |
-| **firebase-tools**     | current (e.g. 13.x); bug is in the CLI |
+| **firebase-tools**     |  |
 
 Use Node 20 and Yarn Berry with PnP for reproduction. Optional: add `.nvmrc` with `20` and run `corepack enable` then `yarn set version berry` in `functions/`.
 
@@ -33,31 +33,32 @@ Use Node 20 and Yarn Berry with PnP for reproduction. Optional: add `.nvmrc` wit
    ```
 
 2. **Build (optional, for TypeScript):**  
-   `yarn run build`
+   From `functions/`: `yarn run build`
 
-3. **Trigger discovery** (from repo root `issue-8165/`):
-
-   ```bash
-   npx firebase deploy --only functions
-   ```
-
-   Or:
+3. **Trigger discovery:** Run from the **project root** (`issue-8165/`), not from `functions/`. The npm package for the Firebase CLI is `firebase-tools`; use it explicitly so `npx` can resolve the executable:
 
    ```bash
-   npx firebase emulators:start --only functions
+   cd issue-8165   # project root
+   npx firebase-tools deploy --only functions
    ```
 
-4. **Observe:** Failure during “Loading and analyzing source code” / function discovery. You should see either:
-   - **MODULE_NOT_FOUND** for `firebase-functions` (from `require.resolve` in `findFunctionsBinary` or in versioning), or
-   - **FirebaseError:** "Failed to find location of Firebase Functions SDK. Please file a bug on Github (https://github.com/firebase/firebase-tools/)."
+   Or for the emulator:
+
+   ```bash
+   npx firebase-tools emulators:start --only functions
+   ```
+
+   **Note:** `npx firebase` may fail with "could not determine executable to run" because the installable package is `firebase-tools`. Alternatively, install globally and use the `firebase` binary: `npm install -g firebase-tools` then `firebase deploy --only functions`. There is no `package.json` at the project root, so `yarn deploy` from the root will not work; run the commands above from the root instead.
+
+4. **Observe:** Failure during “Loading and analyzing source code” / function discovery. You should see:
+   - A warning: **"Couldn't find firebase-functions package in your source code. Have you run 'npm install'?"** (from the version check; PnP has no `node_modules` for `require.resolve` to see), then
+   - **Error: An unexpected error has occurred.**  
+   Other possible outcomes: **MODULE_NOT_FOUND** for `firebase-functions`, or **FirebaseError:** "Failed to find location of Firebase Functions SDK. Please file a bug on Github (https://github.com/firebase/firebase-tools/)."
 
 ## Expected behavior
 
 With PnP support in firebase-tools: discovery would detect Yarn PnP (e.g. `.pnp.cjs` or `process.versions.pnp`) and run `yarn firebase-functions` (or equivalent) instead of looking for `node_modules/.bin/firebase-functions`, and deploy/emulator would proceed.
 
-## Actual behavior
-
-Discovery fails because `findFunctionsBinary()` in `src/deploy/functions/runtimes/node/index.ts` only checks `node_modules/.bin/firebase-functions`; in PnP there is no `node_modules`, so the command errors as above.
 
 ## Project structure
 
@@ -68,11 +69,10 @@ issue-8165/
 │   ├── index.ts           # Minimal https.onRequest export
 │   ├── package.json       # firebase-functions, firebase-admin, TypeScript
 │   └── tsconfig.json
-├── .firebaserc            # default project: demo-project
+├── .firebaserc            
 ├── .gitignore
-├── .nvmrc                 # Node 20 for reproducibility
+├── .nvmrc                  
 ├── firebase.json          # functions source: "functions", runtime nodejs20
 └── README.md
 ```
-
-After `yarn install` in `functions/`, the project uses `.pnp.cjs` (and optionally `.yarn/cache`, `.yarn/install-state.gz`); there is no `node_modules` directory.
+ 
