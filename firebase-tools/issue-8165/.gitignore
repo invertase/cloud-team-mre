@@ -1,0 +1,20 @@
+# Yarn PnP
+functions/.pnp.*
+functions/.yarn/cache
+functions/.yarn/install-state.gz
+functions/.yarn/unplugged
+functions/.yarn/build-state.yml
+functions/.yarn/install-state.gz
+
+# Build output
+functions/lib
+
+# Firebase
+.firebase
+firebase-debug.log
+firebase-debug.*.log
+*.local
+
+# IDE / OS
+.idea
+.DS_Store
