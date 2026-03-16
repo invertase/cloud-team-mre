@@ -1,0 +1,23 @@
+{
+  "name": "mre-issue-1785",
+  "version": "0.0.1",
+  "private": true,
+  "description": "MRE for firebase/firebase-functions#1785",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "deploy": "npx firebase deploy --only functions:mailjetWebhook",
+    "logs": "npx firebase functions:log --only mailjetWebhook",
+    "serve:functions": "npx firebase emulators:start --only functions"
+  },
+  "dependencies": {
+    "firebase-admin": "13.6.0",
+    "firebase-functions": "6.6.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^14.27.0"
+  }
+}
