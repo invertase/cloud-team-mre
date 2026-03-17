@@ -1,0 +1,20 @@
+{
+  "name": "issue-1180-mre",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "serve:functions": "npx firebase emulators:start --only functions,firestore",
+    "serve:all": "npx firebase emulators:start",
+    "deploy": "npx firebase deploy --only functions",
+    "logs": "npx firebase functions:log"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.4.0",
+    "firebase-functions": "^6.3.2",
+    "firebase-tools": "^14.6.0"
+  }
+}
