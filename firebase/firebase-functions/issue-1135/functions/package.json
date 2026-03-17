@@ -1,0 +1,20 @@
+{
+  "name": "issue-1135-mre",
+  "version": "0.0.1",
+  "private": true,
+  "description": "MRE for firebase/firebase-functions issue #1135",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "deploy": "npx firebase deploy --only functions",
+    "serve": "npx firebase emulators:start --only functions,hosting",
+    "logs": "npx firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "13.7.0",
+    "firebase-functions": "7.2.0",
+    "firebase-tools": "15.10.1"
+  }
+}

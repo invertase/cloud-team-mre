@@ -1,0 +1,53 @@
+{
+  "projects": {
+    "default": "dev-extensions-testing"
+  },
+  "targets": {},
+  "etags": {
+    "dev-extensions-testing": {
+      "extensionInstances": {
+        "bigquery-firestore-export": "ce1454450581520f6d8d24948da3e545e3ccaf708a144f9dc9f83067894b7273",
+        "bigquery-firestore-export-7z1c": "18a5e6471db3440f1ad2bd6404fd61e0e463a16634a46b70f90d961058f09a28",
+        "bigquery-firestore-export-od4d": "6b2addc954c9dc3f9716fd169f722fba8c07385ac7a6e4db9316c682de89c399",
+        "bigquery-firestore-export-wmqg": "22206c135ad757d1c481f9faa1565628eec29cdb1abdaa35cb8dfdb982291c75",
+        "delete-user-data": "8861486e0529f8c943f762c1f601654d4714bfb68eb29d367f6f41427908dce5",
+        "delete-user-data-1ohf": "03c4d0057e8cdff8c9d6fa17a6f74fb72bb8b941a48adcc0a8f8a996378280c0",
+        "delete-user-data-dukb": "9642d552f74feaf65c67197129f5f77872d41de09488289f2b680cbd59acbd43",
+        "delete-user-data-uzvx": "1dae01aafd844179b489e1295f8e0e45955ad6043e3a609ca0147fe915889428",
+        "f1-test": "ee434ead4d523fc8ca36d76531dc58f10df0b9219258a7967f399854d6d41ded",
+        "firestore-bigquery-export": "a066f8b09461262e4296a70aaf40424b568bebc28569e274f50494d279cf91f3",
+        "firestore-bigquery-export-123": "ee39be0d94bd95119d7d5437b67f73c432359184601b27848e2ffb1a0bddb585",
+        "firestore-bigquery-export-im7x": "194c329faa80dc38bf3193190ec7740b787622991df9bd3a11412bce1e7bbea9",
+        "firestore-bigquery-export-v4uo": "7ff799c66acf34aabd4e3ba0f647be70ab15a67b03a1720f5fe695b1a0aef7f5",
+        "firestore-bigquery-export-z6vg": "8eb58f85f3cb79909a81a9a38343f9cb7d53eeff76e1cf691677c23da9530cf0",
+        "firestore-counter": "0ea3f05253d49e44e27ce12612f42e0d2ed342937bbe44bebf645e140cb76a70",
+        "firestore-counter-1gh6": "b20164d6310199aaadc2979f262da807e4bfa9ffd0025db0e6ce6690f6e28971",
+        "firestore-incremental-capture": "214aeeb1720e5ab8681db0fec73dafd87165319f2e0c626acae5e28d98c1bd7d",
+        "firestore-incremental-capture-s2b9": "cc1336ee883f0cc629b499fd63258e2e9a4b0077278dedb121edd77a21bbff26",
+        "firestore-multimodal-123": "90296ece1564d123b5590c70ed6e647f09e0d446c2b56a3e30ecdcc317df3d5a",
+        "firestore-multimodal-genai": "bbad1b42ea9667c38e27c7541bd63ba3467fde42b796110b8d15c140554d4eb9",
+        "firestore-multimodal-genai-114": "254afcdb6d3aa963febf371bc8372761db0b2516fe7a359a4ed858ac7f029bee",
+        "firestore-multimodal-genai-1234-6": "79c4be3526bf141981564023d790fb6307145a7c9c98ee17603dfa5002496746",
+        "firestore-multimodal-genai-2v0d": "a94bddee43388ca828bc943f1af99d105830d38a7d58a11431b7a1ddb4648fbc",
+        "firestore-multimodal-genai333": "c0a843c54df420db36c06e3b73ea5d7f5ae8cf7d4de166f4db9e42fab24f97c6",
+        "firestore-multimodal-genai4": "d7ef2f06cf1afd765002fc3f61aa94a65c4caf582a7aba2cfb108c24948e9eb4",
+        "firestore-multimodal-genai5": "f7181cd4d7dc38ea085612657572131144b99917f47e7f377bc4ff67ff8d2079",
+        "firestore-multimodal-genai8": "82c7eecf55c5b322fc06ee549c16324886e1771e2f5677e6d2c1c4cd53f47034",
+        "firestore-multimodal-genai9": "ac0d0b0b1ef88c35671df932980bbde15354bbda2de518ab8089f681d623f686",
+        "firestore-send-email": "42f78ccc461a0ec0733a38edc579b89780e0e155361eeebb0b5ebf4b2b64f7cd",
+        "firestore-send-email-pkex": "e161414d96660eaa379d3d7906a03ad3ac8f63f761d74a99a8beb7cc8e15e078",
+        "firestore-send-email-rzsn": "e55bb5c214b7d5e6937a6ac3a5c81008aab4f1b78e4e4ab142f28361486718e5",
+        "firestore-shorten-urls-bitly": "2fd394c8ee381d23b94177617d66a74075575adbfe461b54d623886d77224ea5",
+        "firestore-translate-text": "a24f2e4fd4a5a0f0bfe4d872ed133b11e1d42db301482928473f61d7d93d79e6",
+        "firestore-translate-text-erx2": "049fc6a8c8907c51a7a24e787925574e7af9b268b1e4357daaf7fe62fc32ec87",
+        "firestore-vector-search": "65d7a5ee0d51ea34a58f69af2d332e9ee172cef7eb7f2146895570b7fefa029a",
+        "rtdb-limit-child-nodes": "b304a39a3c8ce6d4e494af6740321f5259102264f8099da91a7d8f661f17e003",
+        "rtdb-limit-child-nodes-k0ai": "06a143e8b4968c702ff3d9c9417849e2878f993748396f581a72ec7f631e7413",
+        "storage-resize-images": "611450d3f854e7148a20dcf772b67d49a4f9fde8cf06c47c7b06f655932746ea",
+        "storage-resize-images-jfc5": "3d4f1d654c128e6f78b4bc693f0e8889f6ee70ccb8f24a2d9ae89b417ca1de79",
+        "test-rc": "2b6b04962d21b7d1a154ece47b5be6419efb5f5b6e8965c504192e03c57e9b51",
+        "text-to-speech": "e9047110e72a598217965e3851d474a5f0e33c018e5d8e79bcae34b5107dc8cf"
+      }
+    }
+  }
+}

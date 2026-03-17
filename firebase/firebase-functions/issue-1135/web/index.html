@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Issue 1135 MRE</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 24px;
+        font-family: Arial, sans-serif;
+        line-height: 1.4;
+      }
+
+      button {
+        margin-right: 8px;
+      }
+
+      pre {
+        margin-top: 16px;
+        padding: 12px;
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>firebase-functions issue #1135 MRE</h1>
+    <p>
+      Sign in and inspect decoded token claims. The function returns
+      <code>customClaims</code> and <code>sessionClaims</code> from
+      <code>beforeSignIn</code>.
+    </p>
+
+    <button id="signInBtn">Sign in with Google</button>
+    <button id="signOutBtn">Sign out</button>
+
+    <pre id="output">Not signed in yet.</pre>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+      import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithPopup,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+      import { firebaseConfig } from "./firebase-config.js";
+
+      const output = document.getElementById("output");
+      const signInBtn = document.getElementById("signInBtn");
+      const signOutBtn = document.getElementById("signOutBtn");
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const host = window.location.hostname;
+
+      function render(data) {
+        output.textContent = JSON.stringify(data, null, 2);
+      }
+
+      function serializeError(error) {
+        const message = error?.message || String(error);
+        const serialized = {
+          name: error?.name || null,
+          code: error?.code || null,
+          message,
+        };
+
+        // Firebase sometimes surfaces domain authorization failures with a minified message.
+        if (message === "t is not iterable") {
+          serialized.hint =
+            `Likely OAuth authorized-domain issue. Add "${host}" in ` +
+            "Firebase Console > Authentication > Settings > Authorized domains.";
+        }
+
+        return serialized;
+      }
+
+      signInBtn.addEventListener("click", async () => {
+        try {
+          const provider = new GoogleAuthProvider();
+          const value = await signInWithPopup(auth, provider);
+          const idTokenResult = await value.user.getIdTokenResult(true);
+
+          render({
+            uid: value.user.uid,
+            email: value.user.email,
+            displayName: value.user.displayName,
+            claims: idTokenResult.claims,
+          });
+        } catch (error) {
+          render(serializeError(error));
+          console.error("Sign-in failed", error);
+        }
+      });
+
+      signOutBtn.addEventListener("click", async () => {
+        await signOut(auth);
+        output.textContent = "Signed out.";
+      });
+    </script>
+  </body>
+</html>
