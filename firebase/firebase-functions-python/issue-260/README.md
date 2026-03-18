@@ -18,7 +18,6 @@ but `firebase-functions==0.5.0` treats it as a string and calls `.split()`.
 1. From this directory, create and activate a venv:
 
    ```bash
-   cd functions
    python -m venv venv
    # Windows
    .\venv\Scripts\activate
@@ -59,5 +58,5 @@ firebase_functions/private/util.py ... get_precision_timestamp
 
 ## Notes
 
-This is intentionally a direct parser repro (`functions/repro.py`) with no
+This is intentionally a direct parser repro (in `repro.py`) with no
 deployed function handler required.
