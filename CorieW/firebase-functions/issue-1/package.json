@@ -1,0 +1,12 @@
+{
+  "name": "firebase-functions-issue-1-mre",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "typecheck": "tsc --pretty false"
+  },
+  "devDependencies": {
+    "firebase-functions": "7.0.1",
+    "typescript": "5.8.2"
+  }
+}
