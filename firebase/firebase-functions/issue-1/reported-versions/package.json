@@ -1,0 +1,14 @@
+{
+  "name": "firebase-functions-issue-1-reported",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "firebase-functions": "7.0.1"
+  },
+  "devDependencies": {
+    "typescript": "5.4.5"
+  }
+}
