@@ -1,0 +1,13 @@
+{
+  "name": "firebase-functions-issue-1-reported-versions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MRE for CorieW/firebase-functions issue #1 on reported versions",
+  "scripts": {
+    "build": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "firebase-functions": "7.0.1",
+    "typescript": "^5.9.2"
+  }
+}
