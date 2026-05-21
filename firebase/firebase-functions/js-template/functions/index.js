@@ -1,45 +1,30 @@
-import { initializeApp } from "firebase-admin/app";
-import { onRequest as onRequestV1 } from "firebase-functions/v1/https";
-import { firestore as firestoreV1 } from "firebase-functions/v1";
-import { onRequest as onRequestV2 } from "firebase-functions/v2/https";
-import { onDocumentCreated as onDocumentCreatedV2 } from "firebase-functions/v2/firestore";
+import { onValueWritten } from "firebase-functions/v2/database";
+import { logger } from "firebase-functions/logger";
+import { database } from "firebase-functions/v1";
 
-// Initialize Firebase Admin
-initializeApp();
-
-// Sample v1 HTTP function
-export const helloWorld_v1 = onRequestV1((request, response) => {
-  response.json({
-    message: "Hello from Firebase Functions!",
-    timestamp: new Date().toISOString(),
-  });
-});
-
-// Sample v2 HTTP function
-export const helloWorld_v2 = onRequestV2((request, response) => {
-  response.json({
-    message: "Hello from Firebase Functions!",
-    timestamp: new Date().toISOString(),
-  });
-});
-
-// Sample v1 Firestore trigger
-export const onDocumentCreated_v1 = firestoreV1.document(
-  "collection/{documentId}"
-).onCreate(
-  (snap, context) => {
-    const newValue = snap.data();
-    console.log("New document created:", snap.id, newValue);
-    return null;
-  }
-);
-
-// Sample v2 Firestore trigger
-export const onDocumentCreated_v2 = onDocumentCreatedV2(
-  "collection/{documentId}",
-  (event) => {
-    const newValue = event.data?.data();
-    console.log("New document created:", event.params.documentId, newValue);
-    return null;
-  }
-);
+export const writeTransactionChangeV2 = onValueWritten(
+    { ref: '/transactions/{groupId}/{entityId}'},
+    event => {
+        logger.info("AUTH-TEST v2", {
+        authId: event.authId ?? null,
+        authType: event.authType ?? null,
+        rawAuthid: event["authid"] ?? null,
+        rawAuthtype: event["authtype"] ?? null,
+        instance: event.instance,
+        firebaseDatabaseHost: event.firebaseDatabaseHost,
+        params: event.params,
+        eventId: event.id,
+      });
+    });
+  
+  export const writeTransactionChangeV1 = database
+    .ref('/transactions/{groupId}/{entityId}')
+    .onWrite((_change, context) => {
+      logger.info('AUTH-TEST v1', {
+        auth: context.auth ?? null,
+        authType: context.authType ?? null,
+        params: context.params,
+        eventType: context.eventType,
+        eventId: context.eventId,
+      });
+    });

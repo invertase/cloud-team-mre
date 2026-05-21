@@ -1,0 +1,49 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>RTDB Auth Repro</title>
+    </head>
+    <body>
+      <button id="write">Sign in and write</button>
+
+      <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+        const firebaseConfig = {
+          apiKey: "YOUR_API_KEY",
+          authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+          databaseURL: "YOUR_RTDB_URL",
+          projectId: "YOUR_PROJECT_ID",
+          appId: "YOUR_APP_ID",
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
+
+        document.getElementById("write").onclick = async () => {
+          try {
+            const cred = await signInAnonymously(auth);
+            console.log("signed in uid:", cred.user.uid);
+
+            const entityId = crypto.randomUUID();
+            const path = `transactions/group1/${entityId}`;
+
+            await set(ref(db, path), {
+              writtenAt: Date.now(),
+              uidSeenByClient: cred.user.uid,
+              source: "browser-anon-auth-repro",
+            });
+
+            console.log("write complete:", path);
+          } catch (err) {
+            console.error("repro failed:", err);
+          }
+        };
+      </script>
+    </body>
+  </html>
