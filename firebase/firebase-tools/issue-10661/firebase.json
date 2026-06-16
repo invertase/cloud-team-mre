@@ -1,0 +1,19 @@
+{
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default"
+    }
+  ],
+  "hosting": {
+    "public": "hosting",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      ".firebaserc.example",
+      "README.md",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
