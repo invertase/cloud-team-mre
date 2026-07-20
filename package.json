@@ -1,0 +1,16 @@
+{
+  "name": "genkit-devui-repros",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "repro": "node scripts/repro.mjs",
+    "clean": "rm -rf .genkit"
+  },
+  "dependencies": {
+    "genkit": "^1.36.0"
+  },
+  "devDependencies": {
+    "genkit-cli": "^1.36.0"
+  }
+}
