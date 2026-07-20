@@ -30,3 +30,22 @@ ai.defineFlow(
   },
   async (input) => `echo: ${input}`
 );
+
+/**
+ * A trivial deterministic evaluator so `genkit eval:run --batchSize <n>` has an
+ * evaluator to invoke. It scores every test case identically (PASS), so eval
+ * runs are fully reproducible and require no API keys or network access.
+ */
+ai.defineEvaluator(
+  {
+    name: 'test/always_pass',
+    displayName: 'Always Pass',
+    definition: 'Deterministically returns a PASS score of 1 for every case.',
+  },
+  async (datapoint) => {
+    return {
+      testCaseId: datapoint.testCaseId,
+      evaluation: { score: 1, status: 'PASS' },
+    };
+  }
+);

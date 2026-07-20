@@ -32,6 +32,7 @@ issue.
 | `datasets-drawer-style` | Datasets drawer header diverges from the shared drawer treatment (close button first, no aria-label) | genkit-ai/genkit#4532 |
 | `delete-dataset-error` | Delete-dataset dialog closes on error, leaving only a context-free snackbar | genkit-ai/genkit#4415 |
 | `eval-run-routing` | Clicking an eval run on the Evaluations page routes into the Datasets section (URL and left-nav highlight jump to Datasets) | genkit-ai/genkit#4532 |
+| `batch-size-metadata` | Eval runs with a `--batchSize` don't record it in the persisted eval metadata, so the Dev UI can't show which batch size was used | genkit-ai/genkit#3263 |
 
 ## Caveats
 
