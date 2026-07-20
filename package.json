@@ -8,9 +8,9 @@
     "clean": "rm -rf .genkit"
   },
   "dependencies": {
-    "genkit": "^1.36.0"
+    "genkit": "^1.40.0"
   },
   "devDependencies": {
-    "genkit-cli": "^1.36.0"
+    "genkit-cli": "^1.40.0"
   }
 }

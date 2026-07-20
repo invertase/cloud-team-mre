@@ -1,0 +1,9 @@
+packages:
+  - '.'
+
+# genkit 1.40.0 shipped genkit/testing days ago; exclude the genkit packages
+# from the global minimumReleaseAge guard so the fixture can use it.
+minimumReleaseAgeExclude:
+  - genkit
+  - genkit-cli
+  - '@genkit-ai/*'

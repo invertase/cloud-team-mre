@@ -9,12 +9,12 @@ importers:
   .:
     dependencies:
       genkit:
-        specifier: ^1.36.0
-        version: 1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)
+        specifier: ^1.40.0
+        version: 1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)
     devDependencies:
       genkit-cli:
-        specifier: ^1.36.0
-        version: 1.39.0(@cfworker/json-schema@4.1.1)(@types/node@26.1.1)(zod@3.25.76)
+        specifier: ^1.40.0
+        version: 1.40.0(@cfworker/json-schema@4.1.1)(@types/node@26.1.1)(zod@3.25.76)
 
 packages:
 
@@ -224,11 +224,11 @@ packages:
     resolution: {integrity: sha512-LUdM4Wg7YM9Pq/49nGYySJA0CSQEKnGffFzWV8+6gXN7mGxn+FL1IqvFbuZUtAQcfZgHYDwCE1wwlK7rB7gl2g==}
     engines: {node: '>=20.0.0'}
 
-  '@genkit-ai/ai@1.39.0':
-    resolution: {integrity: sha512-e1ZI2ib4Y8ha2Zj/rN7Uioxd16rWMhalPe3krypLw8B4G36X8KZCqj2UhucKbCZJIffU0cxEvag7BP+JVQnsyQ==}
+  '@genkit-ai/ai@1.40.0':
+    resolution: {integrity: sha512-uD+ZLfdCW+0gpMpWiTYGqiQitqlizDN4xPWFAnvTF9YidDhh+fzAMBtnTecp+nhCfOmLu+4PUaJ5hfvi2wy58A==}
 
-  '@genkit-ai/core@1.39.0':
-    resolution: {integrity: sha512-MI0cpmwc4K/KPVsXFAcHviOybt3T3IsVSsN37cEcOzo7mmv+s0JSdooxlQgZn68B6e3I8BNLL3Vk1vyc6qIlCw==}
+  '@genkit-ai/core@1.40.0':
+    resolution: {integrity: sha512-ah42KLZgNO4XjCPaErKIHoF0C4dTiUqGsOHv9E/yNpQdFyUNapCybBVKVc6Pc8iURc8pi4Z2QzARIHIv467k4w==}
 
   '@genkit-ai/firebase@1.39.0':
     resolution: {integrity: sha512-7mmSILHULw83z9NXJOpDmsQsVrC68ZB4rEew+9SzB9c8z4U7OQ6aL/E1QuhmgXV9irbyMNKGmW8XFnaGyLbnAg==}
@@ -246,11 +246,11 @@ packages:
     peerDependencies:
       genkit: ^1.39.0
 
-  '@genkit-ai/telemetry-server@1.39.0':
-    resolution: {integrity: sha512-FktxOGR37LOatOjMJTnRp/nMkbZplq+ld9HujGclZrPTUB7Fn0GR0b3osjb9ofw+zmbpX1ZxWkOibz9b9c5f/g==}
+  '@genkit-ai/telemetry-server@1.40.0':
+    resolution: {integrity: sha512-quf60BzUkVm0uuP2c9AgxxAlLZlqsvCJzaPgnWydHLfd/24yHHYnWuDjs7dLZnbeksjfH+7WTlR40X/4rd3+lA==}
 
-  '@genkit-ai/tools-common@1.39.0':
-    resolution: {integrity: sha512-sbp5gSxrrW75/Loy7FZupM51tRVPOHbd8NPriJ+OQMyTOQniQ+X+MaOamUvGMqt7IlxeiFSAnifKFvbNVNIzGg==}
+  '@genkit-ai/tools-common@1.40.0':
+    resolution: {integrity: sha512-v6VJrXkd7J5EE3K3KlI1Sy3VaJVbpYcKJnmZojdp/BQzy0EvVrUB5z07o7WA/FO21urdsJ4sXTJQrKV9kKqL4w==}
 
   '@google-cloud/common@5.0.2':
     resolution: {integrity: sha512-V7bmBKYQyu0eVG2BFejuUjlBt+zrya6vtsKdY+JxMM/dNntPF41vZ9+LhOshEUH01zOHEqBSvI7Dad7ZS6aUeA==}
@@ -1572,12 +1572,12 @@ packages:
     resolution: {integrity: sha512-ziTrzUhhpL9Zk5k0HHzgP/KIpWDJT0VMBC/ynt/QIBvTW+UUcSivQRl6VlwTf/EilDxtSWklHoRsKy1c4k+59w==}
     engines: {node: '>=18'}
 
-  genkit-cli@1.39.0:
-    resolution: {integrity: sha512-ikRAfSlQpNwyJ0Px0gV9x9NeDzt/x0JavIMJIayQYgzPWSbxqD9fzGlqcRj5D/ZzNL8mcvee8IkFGT7cN72DgQ==}
+  genkit-cli@1.40.0:
+    resolution: {integrity: sha512-veS6IdQEp6GG6m24Liespq99niM/u6TI28iZwDkGdtUeVRpa3zNcxvDLN5sj6s48Ml4Dj7sfRzSYNAWen69zAA==}
     hasBin: true
 
-  genkit@1.39.0:
-    resolution: {integrity: sha512-Qz9ef/LfAEDMzO1+Nd6l6dMYK/V4ZfWDIp79rz/1V6xDM5VuJMkoqOTCDwXAviuAnjoO2noJug2wIK81ilMhWA==}
+  genkit@1.40.0:
+    resolution: {integrity: sha512-OB0duJgIWtAv2Exp1FTc4uh0ZIYg5AUCtQATagU0fXbaEZeSVsn9c2geNR0Btr0tAHVUabpZp19QlSmy9Gpc7Q==}
 
   get-caller-file@2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
@@ -2732,9 +2732,9 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@genkit-ai/ai@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))':
+  '@genkit-ai/ai@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))':
     dependencies:
-      '@genkit-ai/core': 1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))
+      '@genkit-ai/core': 1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))
       '@opentelemetry/api': 1.9.1
       '@types/node': 20.19.43
       colorette: 2.0.20
@@ -2755,7 +2755,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@genkit-ai/core@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))':
+  '@genkit-ai/core@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))':
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/api-logs': 0.52.1
@@ -2779,7 +2779,7 @@ snapshots:
       zod-to-json-schema: 3.25.2(zod@3.25.76)
     optionalDependencies:
       '@cfworker/json-schema': 4.1.1
-      '@genkit-ai/firebase': 1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))
+      '@genkit-ai/firebase': 1.39.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))
     transitivePeerDependencies:
       - '@google-cloud/firestore'
       - bufferutil
@@ -2790,18 +2790,18 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@genkit-ai/firebase@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))':
+  '@genkit-ai/firebase@1.39.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))':
     dependencies:
-      '@genkit-ai/google-cloud': 1.39.0(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))
-      '@google-cloud/firestore': 7.11.6
+      '@genkit-ai/google-cloud': 1.39.0(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))
+      '@google-cloud/firestore': 8.6.0
       firebase-admin: 14.1.0
-      genkit: 1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)
+      genkit: 1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)
     transitivePeerDependencies:
       - encoding
       - supports-color
     optional: true
 
-  '@genkit-ai/google-cloud@1.39.0(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))':
+  '@genkit-ai/google-cloud@1.39.0(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))':
     dependencies:
       '@google-cloud/firestore': 7.11.6
       '@google-cloud/logging-winston': 6.0.2(winston@3.19.0)
@@ -2819,7 +2819,7 @@ snapshots:
       '@opentelemetry/sdk-metrics': 1.25.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/sdk-node': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/sdk-trace-base': 1.25.1(@opentelemetry/api@1.9.1)
-      genkit: 1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)
+      genkit: 1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)
       google-auth-library: 9.15.1
       node-fetch: 3.3.2
       winston: 3.19.0
@@ -2828,10 +2828,10 @@ snapshots:
       - supports-color
     optional: true
 
-  '@genkit-ai/telemetry-server@1.39.0(@types/node@26.1.1)':
+  '@genkit-ai/telemetry-server@1.40.0(@types/node@26.1.1)':
     dependencies:
       '@asteasolutions/zod-to-openapi': 7.3.4(zod@3.25.76)
-      '@genkit-ai/tools-common': 1.39.0(@types/node@26.1.1)
+      '@genkit-ai/tools-common': 1.40.0(@types/node@26.1.1)
       '@google-cloud/firestore': 7.11.6
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/context-async-hooks': 1.25.1(@opentelemetry/api@1.9.1)
@@ -2852,7 +2852,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@genkit-ai/tools-common@1.39.0(@types/node@26.1.1)':
+  '@genkit-ai/tools-common@1.40.0(@types/node@26.1.1)':
     dependencies:
       '@asteasolutions/zod-to-openapi': 7.3.4(zod@3.25.76)
       '@inquirer/prompts': 7.10.1(@types/node@26.1.1)
@@ -3347,7 +3347,7 @@ snapshots:
   '@opentelemetry/instrumentation-amqplib@0.41.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     transitivePeerDependencies:
@@ -3369,7 +3369,7 @@ snapshots:
   '@opentelemetry/instrumentation-aws-sdk@0.43.1(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/propagation-utils': 0.30.16(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
@@ -3399,7 +3399,7 @@ snapshots:
   '@opentelemetry/instrumentation-connect@0.38.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
       '@types/connect': 3.4.36
@@ -3436,7 +3436,7 @@ snapshots:
   '@opentelemetry/instrumentation-express@0.41.1(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     transitivePeerDependencies:
@@ -3446,7 +3446,7 @@ snapshots:
   '@opentelemetry/instrumentation-fastify@0.38.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     transitivePeerDependencies:
@@ -3456,7 +3456,7 @@ snapshots:
   '@opentelemetry/instrumentation-fs@0.14.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
     transitivePeerDependencies:
       - supports-color
@@ -3490,7 +3490,7 @@ snapshots:
   '@opentelemetry/instrumentation-hapi@0.40.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     transitivePeerDependencies:
@@ -3539,7 +3539,7 @@ snapshots:
   '@opentelemetry/instrumentation-koa@0.42.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     transitivePeerDependencies:
@@ -3577,7 +3577,7 @@ snapshots:
   '@opentelemetry/instrumentation-mongoose@0.41.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     transitivePeerDependencies:
@@ -3638,7 +3638,7 @@ snapshots:
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/api-logs': 0.52.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
     transitivePeerDependencies:
       - supports-color
@@ -3667,7 +3667,7 @@ snapshots:
   '@opentelemetry/instrumentation-restify@0.40.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     transitivePeerDependencies:
@@ -3705,7 +3705,7 @@ snapshots:
   '@opentelemetry/instrumentation-undici@0.5.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.1)
     transitivePeerDependencies:
       - supports-color
@@ -3791,7 +3791,7 @@ snapshots:
   '@opentelemetry/resource-detector-aws@1.12.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/resources': 1.25.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     optional: true
@@ -3799,7 +3799,7 @@ snapshots:
   '@opentelemetry/resource-detector-azure@0.2.12(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/resources': 1.25.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
     optional: true
@@ -3815,7 +3815,7 @@ snapshots:
   '@opentelemetry/resource-detector-gcp@0.29.13(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/resources': 1.25.1(@opentelemetry/api@1.9.1)
       '@opentelemetry/semantic-conventions': 1.43.0
       gcp-metadata: 6.1.1
@@ -3891,7 +3891,7 @@ snapshots:
   '@opentelemetry/sql-common@0.40.1(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@opentelemetry/core': 1.25.1(@opentelemetry/api@1.9.1)
+      '@opentelemetry/core': 1.30.1(@opentelemetry/api@1.9.1)
     optional: true
 
   '@pkgjs/parseargs@0.11.0':
@@ -4694,10 +4694,10 @@ snapshots:
       - supports-color
     optional: true
 
-  genkit-cli@1.39.0(@cfworker/json-schema@4.1.1)(@types/node@26.1.1)(zod@3.25.76):
+  genkit-cli@1.40.0(@cfworker/json-schema@4.1.1)(@types/node@26.1.1)(zod@3.25.76):
     dependencies:
-      '@genkit-ai/telemetry-server': 1.39.0(@types/node@26.1.1)
-      '@genkit-ai/tools-common': 1.39.0(@types/node@26.1.1)
+      '@genkit-ai/telemetry-server': 1.40.0(@types/node@26.1.1)
+      '@genkit-ai/tools-common': 1.40.0(@types/node@26.1.1)
       '@inquirer/prompts': 7.10.1(@types/node@26.1.1)
       '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       axios: 1.18.1
@@ -4719,10 +4719,10 @@ snapshots:
       - utf-8-validate
       - zod
 
-  genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0):
+  genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0):
     dependencies:
-      '@genkit-ai/ai': 1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))
-      '@genkit-ai/core': 1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0)(genkit@1.39.0(@google-cloud/firestore@7.11.6)(firebase-admin@14.1.0))
+      '@genkit-ai/ai': 1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))
+      '@genkit-ai/core': 1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0)(genkit@1.40.0(@google-cloud/firestore@8.6.0)(firebase-admin@14.1.0))
       uuid: 10.0.0
     transitivePeerDependencies:
       - '@google-cloud/firestore'

@@ -1,26 +1,14 @@
 import { genkit, z } from 'genkit';
+import { echoModel } from 'genkit/testing';
 
 const ai = genkit({});
 
 /**
- * A no-op echo model so the Dev UI has an app to attach to. No API key or
- * network access required; repros only need the dev server's local stores.
+ * Deterministic echo model from genkit's public testing module, so the Dev UI
+ * has an app to attach to. No API key or network access required; repros only
+ * need the dev server's local stores.
  */
-ai.defineModel(
-  {
-    name: 'test/echo',
-    label: 'Test Echo Model',
-    supports: { multiturn: true, systemRole: true },
-  },
-  async (request) => {
-    const lastUserMessage = [...request.messages]
-      .reverse()
-      .find((m) => m.role === 'user');
-    const text =
-      lastUserMessage?.content.map((p) => p.text ?? '').join('') ?? '';
-    return { message: { role: 'model', content: [{ text: `echo: ${text}` }] } };
-  }
-);
+echoModel(ai);
 
 ai.defineFlow(
   {
