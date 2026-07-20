@@ -31,6 +31,7 @@ issue.
 | `markdown-row-highlight` | Markdown code blocks punch a hole in the dataset row hover highlight | genkit-ai/genkit#4532 |
 | `datasets-drawer-style` | Datasets drawer header diverges from the shared drawer treatment (close button first, no aria-label) | genkit-ai/genkit#4532 |
 | `delete-dataset-error` | Delete-dataset dialog closes on error, leaving only a context-free snackbar | genkit-ai/genkit#4415 |
+| `large-outputs-unusable` | Eval details page is unusable for large outputs: the column header scrolls away and there is no metrics-only/summary view to find graded rows | genkit-ai/genkit#4532 |
 
 ## Caveats
 
