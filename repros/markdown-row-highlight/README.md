@@ -20,5 +20,7 @@ one plain-text example for comparison.
 
 ![Actual behavior](screenshot.png)
 
+(Screenshot uses the light theme, where the translucent row tint is most visible; the same hole appears in dark mode.)
+
 
 Last verified against: `genkit-cli` 1.40.0
