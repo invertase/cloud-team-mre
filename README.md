@@ -31,6 +31,7 @@ issue.
 | `markdown-row-highlight` | Markdown code blocks punch a hole in the dataset row hover highlight | genkit-ai/genkit#4532 |
 | `datasets-drawer-style` | Datasets drawer header diverges from the shared drawer treatment (close button first, no aria-label) | genkit-ai/genkit#4532 |
 | `delete-dataset-error` | Delete-dataset dialog closes on error, leaving only a context-free snackbar | genkit-ai/genkit#4415 |
+| `eval-run-routing` | Clicking an eval run on the Evaluations page routes into the Datasets section (URL and left-nav highlight jump to Datasets) | genkit-ai/genkit#4532 |
 
 ## Caveats
 
