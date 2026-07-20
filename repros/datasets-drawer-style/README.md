@@ -17,4 +17,7 @@ pnpm repro datasets-drawer-style
   `aria-label` (screen readers announce an unlabeled button), and the header
   is missing the shared height/border/surface treatment.
 
-Last verified against: `genkit-cli` 1.36.x
+![Actual behavior](screenshot.png)
+
+
+Last verified against: `genkit-cli` 1.40.0

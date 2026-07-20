@@ -50,4 +50,7 @@ Override the seeded size to reproduce a specific point:
 DIFF_SIZE_KB=600 pnpm repro diff-view-freeze
 ```
 
+![Actual behavior](screenshot.png)
+
+
 Last verified against: `genkit-cli` 1.39.0

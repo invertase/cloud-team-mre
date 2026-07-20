@@ -18,4 +18,7 @@ one plain-text example for comparison.
   background on top of the semi-transparent row highlight, punching a visible
   hole in it.
 
-Last verified against: `genkit-cli` 1.36.x
+![Actual behavior](screenshot.png)
+
+
+Last verified against: `genkit-cli` 1.40.0

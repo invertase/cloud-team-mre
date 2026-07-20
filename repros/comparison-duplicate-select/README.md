@@ -18,4 +18,7 @@ comparing `baseline` against `run-two`.
 - **Actual:** only the baseline is disabled; `run-two` is selectable again and
   the table renders the same run in two comparison columns.
 
-Last verified against: `genkit-cli` 1.36.x
+![Actual behavior](screenshot.png)
+
+
+Last verified against: `genkit-cli` 1.40.0

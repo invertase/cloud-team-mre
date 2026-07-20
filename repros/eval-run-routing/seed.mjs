@@ -6,14 +6,14 @@ export const meta = {
   url: 'http://localhost:4000/evaluate',
   steps: [
     'Note the left-nav "Evaluations" item is highlighted.',
-    'In the runs table, click the "run-one" row.',
+    'In the runs table, click the "route-one" row.',
     'Expected: you stay in the Evaluations section (nav highlight stays on "Evaluations", URL stays under /evaluate).',
-    'Actual: the URL becomes /datasets/route-dataset/evaluate/run-one and the left-nav highlight jumps to "Datasets".',
+    'Actual: the URL becomes /datasets/route-dataset/evaluate/route-one and the left-nav highlight jumps to "Datasets".',
   ],
 };
 
 export function seed() {
-  for (const [i, evalRunId] of ['run-one', 'run-two'].entries()) {
+  for (const [i, evalRunId] of ['route-one', 'route-two'].entries()) {
     writeEvalRun({
       evalRunId,
       datasetId: 'route-dataset',

@@ -16,4 +16,7 @@ output.
   so the input renders ~1400px below the output's first line and the input
   column appears empty until you scroll.
 
-Last verified against: `genkit-cli` 1.36.x
+![Actual behavior](screenshot.png)
+
+
+Last verified against: `genkit-cli` 1.40.0

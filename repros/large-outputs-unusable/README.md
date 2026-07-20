@@ -47,4 +47,7 @@ columns you see here are that bug) and the sibling diff-view-freeze repro (large
 outputs in the **comparison** view). This repro shares the seed helper
 (`writeEvalRun`, now with metrics support) with those.
 
+![Actual behavior](screenshot.png)
+
+
 Last verified against: `genkit-cli` 1.39.0
