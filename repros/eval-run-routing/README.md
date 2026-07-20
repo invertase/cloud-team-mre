@@ -21,4 +21,4 @@ page, where the left-nav **Evaluations** item is highlighted.
 ![Actual behavior](screenshot.png)
 
 
-Last verified against: `genkit-cli` 1.39.0
+Last verified against: `genkit-cli` 1.40.0

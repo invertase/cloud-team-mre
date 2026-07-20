@@ -28,7 +28,7 @@ data, the eval details toolbar shows the "text_compare" diff toggle.
 
 Single synchronous block in the toggle's click handler (`performance.now()`
 around the click; matches the browser `longtask` durations), Chrome via
-`agent-browser`, `genkit-cli` 1.39.0:
+`agent-browser`, `genkit-cli` 1.40.0:
 
 | Output / reference size | Main-thread block |
 | --- | --- |
@@ -53,4 +53,4 @@ DIFF_SIZE_KB=600 pnpm repro diff-view-freeze
 ![Actual behavior](screenshot.png)
 
 
-Last verified against: `genkit-cli` 1.39.0
+Last verified against: `genkit-cli` 1.40.0

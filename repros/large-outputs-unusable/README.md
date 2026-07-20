@@ -50,4 +50,4 @@ outputs in the **comparison** view). This repro shares the seed helper
 ![Actual behavior](screenshot.png)
 
 
-Last verified against: `genkit-cli` 1.39.0
+Last verified against: `genkit-cli` 1.40.0

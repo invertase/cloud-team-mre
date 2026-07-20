@@ -43,4 +43,4 @@ The gap is in the released `EvalRunKeySchema`
 (`@genkit-ai/tools-common`), which has no `batchSize` field, so there is nowhere
 for the eval store or the Dev UI eval details page to surface it.
 
-Last verified against: `genkit-cli` 1.39.0
+Last verified against: `genkit-cli` 1.40.0
